@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+
+  <br>
+  <br>
+  <br>
+  <center>
+    <div class="card text-dark bg-light mb-10" style="max-width: 60rem;">
+        <div class="card-header text-light" style="background-color: #ffa4c3">
+          Hasil Prediksi Sebagai Berikut :
+        </div>
+        <div class="card-body">
+          {% if result == "Tumor Ganas" %}
+  <div class="container-fluid">
+    <h1 class='text-center mt-3'>Pasien mengidap <b class='text-danger'>Tumor Ganas</b></h1>
+    <hr>
+    <h5><b>Tumor ini berisiko menjadi akar dari kanker payudara.</b></h5>
+    <p class='text-center'>Pasien dapat melakukan tindakan-tindakan ini untuk kanker payudara: </p>
+    <ol>
+      <li>Segera melakukan pemeriksaan secepatnya.</li>
+      <li>Lakukan tindakan cepat agar kanker tidak cepat menyebar.</li>
+      <li>Lakukan terapi radiasi dan atau kemoterapi serta pengangkatan tumor.</li>
+      <li>Rutinlah dan jangan menunda pemeriksaan.</li>
+   </ol>
+  </div>
+{% else %}
+<div class="container-fluid">
+    <h1 class='text-center mt-3'>Pasien mengidap <b class='text-primary'>Tumor Jinak</b></h1>
+    <hr>
+    <h5><b>Tumor ini tidak menyebar bagian tubuh lain serta umumnya tidak membahayakan.</b></h5>
+    <p class='text-center'>Pasien dapat melakukan tindakan-tindakan ini untuk menurunkan risiko kanker payudara: </p>
+    <ol>
+      <li>Melakukan pemeriksaan mammogram secara teratur.</li>
+      <li>Melakukan pemeriksaan diri untuk membiasakan diri dengan tampilan dan mengenali gejala yang terasa di payudara.</li>
+      <li>Menghindari alkohol dan berhenti merokok.</li>
+      <li>Berolahraga secara teratur dan makan makanan bergizi seimbang.</li>
+   </ol>
+</div>
+{% endif %}
+ <a class='btn btn-secondary mt-4 p-1 text-center' style="background-color: #fe7ba7" href="{% url 'predict' %}">Go Back</a>
+        </div>
+      </div>
+    </center>
+    <br><br>
+
+{% endblock content %}
